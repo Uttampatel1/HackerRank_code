@@ -3,14 +3,10 @@
 
 import re
 
-def validate_phone_number(number):
-    pattern = re.compile(r'^\+?1?\d{9,15}$')
-    return pattern.match(number)
-
 n = int(input())
-for _ in range(n):
-    number = input()
-    if validate_phone_number(number):
+for i in range(n):
+    s = input()
+    if re.match(r'[789]\d{9}$', s):
         print('YES')
     else:
         print('NO')
